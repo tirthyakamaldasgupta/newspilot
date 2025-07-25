@@ -34,12 +34,17 @@ langchain-core==0.3.72
 langchain-google-community==2.0.7
 langchain-mistralai==0.2.11
 langchain-text-splitters==0.3.9
+langgraph==0.5.4
+langgraph-checkpoint==2.1.1
+langgraph-prebuilt==0.5.2
+langgraph-sdk==0.1.74
 langsmith==0.4.8
 marshmallow==3.26.1
 multidict==6.6.3
 mypy_extensions==1.1.0
 numpy==2.3.2
 orjson==3.11.0
+ormsgpack==1.10.0
 packaging==25.0
 propcache==0.3.2
 proto-plus==1.26.1
@@ -65,5 +70,6 @@ typing-inspection==0.4.1
 typing_extensions==4.14.1
 uritemplate==4.2.0
 urllib3==2.5.0
+xxhash==3.5.0
 yarl==1.20.1
 zstandard==0.23.0
