@@ -1,8 +1,15 @@
 from graph import app
 from state import AgentState
 
-state = AgentState(user_query="Send me all technology articles from Hindustan Times and Indian Express")
+query = input(
+    "I can help you search news articles from Indian publishers and send them to your email.\n"
+    "Example queries:\n"
+    "  - Send me all technology articles from Hindustan Times and Indian Express\n"
+    "  - Email me today’s top headlines from Times of India\n"
+    "Enter your request: "
+)
 
-final_state = app.invoke(state)
+state = AgentState(query=query)
 
-print(final_state)
+for step in app.stream(state):
+    print("Current state snapshot: ", step)

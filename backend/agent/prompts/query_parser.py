@@ -9,8 +9,12 @@ Given a user query, extract the following as JSON:
 - topics: List of topics the user is interested in (e.g., "technology", "sports")
 - number_of_results: Approximate number of news articles requested. Default to 5 if unclear.
 - web_search_query: A smart Google search query combining the topics and site filters.
-- action: "search_only" if the user only wants to view the results, or "search_and_email" if they want them emailed.
+- action: 
+    - "search_only" if the user just wants to retrieve or view the news (keywords like "get", "fetch", "find", "look for", etc.).
+    - "search_and_email" if the user asks to email the news or uses words like "email", "send", "forward", etc.
 
-User query: {user_query}
+Be very careful to distinguish between "get" and "email".
+
+User query: {query}
 Respond in pure JSON.
 """)

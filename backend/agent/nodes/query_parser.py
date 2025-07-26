@@ -16,6 +16,6 @@ chain = query_parser_prompt | llm | parser
 
 
 def query_parser_node(state: AgentState) -> AgentState:
-    parsed = chain.invoke({"user_query": state.user_query})
+    parsed = chain.invoke({"query": state.query})
 
-    return AgentState(**parsed.dict(exclude_unset=True), user_query=state.user_query)
+    return AgentState(**parsed.dict(exclude_unset=True), query=state.query)
