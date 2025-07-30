@@ -1,0 +1,29 @@
+<div class="chat-wrapper">
+  <div class="chat-content">
+    @for (item of messages; track item.message) {
+    <div
+      class="d-flex align-items-start mb-2"
+      [ngClass]="[item.alertAlignmentClass]"
+    >
+      @if (item.role === "assistant") {
+      <i class="bi me-2 fs-4 text-primary" [ngClass]="[item.roleIcon]"></i>
+      <div class="alert mb-0 w-50" [ngClass]="[item.alertClass]" role="alert">
+        {{ item.message }}
+      </div>
+      } @else if (item.role === "user") {
+      <div class="alert mb-0 w-50" [ngClass]="[item.alertClass]" role="alert">
+        {{ item.message }}
+      </div>
+      <i class="bi ms-2 fs-4 text-primary" [ngClass]="[item.roleIcon]"></i>
+      }
+    </div>
+    }
+  </div>
+
+  <div class="chat-input">
+    <div class="d-flex">
+      <input type="text" class="form-control me-2" placeholder="Ask anything" />
+      <button type="button" class="btn btn-primary">Send</button>
+    </div>
+  </div>
+</div>
